@@ -5,26 +5,26 @@ using System.Threading;
 
 public class PlayerRotation : MonoBehaviour
 {
-    public float rotationAmount = 45f;
-
-    IEnumerator DelayedFunctionCall(float delay)
+    
+    private Quaternion target;
+    public float rotationSpeed = 0.1f;
+    void Start()
     {
-        yield return new WaitForSeconds(delay);
+        target = transform.rotation;
     }
-
     void Update()
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            StartCoroutine(DelayedFunctionCall(3f));
-            transform.Rotate(0, -rotationAmount, 0);
-
+            target *= Quaternion.Euler(0, -90, 0);
+            Thread.Sleep(125);
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Rotate(0, rotationAmount, 0);
+            target *= Quaternion.Euler(0, 90, 0);
             Thread.Sleep(125);
         }
+        transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * rotationSpeed);
     }
 }
