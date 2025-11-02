@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 15202586}
   - component: {fileID: 15202585}
   - component: {fileID: 15202589}
+  - component: {fileID: 15202590}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -332,7 +333,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d13bdecc3f1f7c4da993d363399e178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationAmount: 90
+  rotationSpeed: 90
+  isRotating: 0
+--- !u!114 &15202590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15202584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2135a40427fdc641a60c4054f518c11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodePoints: []
+  nodeTag: NodePoint
+  moveKey: 32
+  instantMove: 0
+  moveSpeed: 10
 --- !u!1 &18629204
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,7 +948,7 @@ GameObject:
   - component: {fileID: 60896679}
   m_Layer: 0
   m_Name: Node (13)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1317,7 +1336,7 @@ GameObject:
   - component: {fileID: 82678258}
   m_Layer: 0
   m_Name: Node (9)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2093,7 +2112,7 @@ GameObject:
   - component: {fileID: 134989079}
   m_Layer: 0
   m_Name: Node (5)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2966,7 +2985,7 @@ GameObject:
   - component: {fileID: 170904676}
   m_Layer: 0
   m_Name: Node (3)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3870,7 +3889,7 @@ GameObject:
   - component: {fileID: 231249650}
   m_Layer: 0
   m_Name: Node
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4258,7 +4277,7 @@ GameObject:
   - component: {fileID: 241930631}
   m_Layer: 0
   m_Name: Node (10)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4549,7 +4568,7 @@ GameObject:
   - component: {fileID: 258064882}
   m_Layer: 0
   m_Name: Node (27)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6645,7 +6664,7 @@ GameObject:
   - component: {fileID: 437222971}
   m_Layer: 0
   m_Name: Node (25)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7518,7 +7537,7 @@ GameObject:
   - component: {fileID: 521862543}
   m_Layer: 0
   m_Name: Node (4)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8488,7 +8507,7 @@ GameObject:
   - component: {fileID: 633979574}
   m_Layer: 0
   m_Name: Node (21)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9649,7 +9668,7 @@ GameObject:
   - component: {fileID: 771036974}
   m_Layer: 0
   m_Name: Node (18)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10231,7 +10250,7 @@ GameObject:
   - component: {fileID: 828490581}
   m_Layer: 0
   m_Name: Node (1)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10328,7 +10347,7 @@ GameObject:
   - component: {fileID: 842330768}
   m_Layer: 0
   m_Name: Node (7)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12171,7 +12190,7 @@ GameObject:
   - component: {fileID: 983524304}
   m_Layer: 0
   m_Name: Node (16)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12268,7 +12287,7 @@ GameObject:
   - component: {fileID: 985878961}
   m_Layer: 0
   m_Name: Node (26)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13141,7 +13160,7 @@ GameObject:
   - component: {fileID: 1113700110}
   m_Layer: 0
   m_Name: Node (12)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13432,7 +13451,7 @@ GameObject:
   - component: {fileID: 1154908835}
   m_Layer: 0
   m_Name: Node (22)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13820,7 +13839,7 @@ GameObject:
   - component: {fileID: 1187167302}
   m_Layer: 0
   m_Name: Node (17)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14111,7 +14130,7 @@ GameObject:
   - component: {fileID: 1248225799}
   m_Layer: 0
   m_Name: Node (11)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14239,7 +14258,7 @@ GameObject:
   - component: {fileID: 1274781624}
   m_Layer: 0
   m_Name: Node (8)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15306,7 +15325,7 @@ GameObject:
   - component: {fileID: 1355977577}
   m_Layer: 0
   m_Name: Node (14)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16470,7 +16489,7 @@ GameObject:
   - component: {fileID: 1436267153}
   m_Layer: 0
   m_Name: Node (15)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17731,7 +17750,7 @@ GameObject:
   - component: {fileID: 1573279169}
   m_Layer: 0
   m_Name: Node (19)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18022,7 +18041,7 @@ GameObject:
   - component: {fileID: 1610722038}
   m_Layer: 0
   m_Name: Node (6)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18701,7 +18720,7 @@ GameObject:
   - component: {fileID: 1681455522}
   m_Layer: 0
   m_Name: Node (23)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19089,7 +19108,7 @@ GameObject:
   - component: {fileID: 1708645037}
   m_Layer: 0
   m_Name: Node (24)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19283,7 +19302,7 @@ GameObject:
   - component: {fileID: 1737789915}
   m_Layer: 0
   m_Name: Node (2)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20477,7 +20496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d13bdecc3f1f7c4da993d363399e178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationAmount: 90
+  rotationSpeed: 90
+  isRotating: 0
 --- !u!1 &1896916376
 GameObject:
   m_ObjectHideFlags: 0
@@ -22854,7 +22874,7 @@ GameObject:
   - component: {fileID: 2114999846}
   m_Layer: 0
   m_Name: Node (20)
-  m_TagString: Untagged
+  m_TagString: NodePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
