@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
+public class PuzzleLoader : MonoBehaviour
+{
+    public string sceneToLoad = "Scenes/ButtonPuzzle";
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("ButtonPuzzle"))
+        {
+            SceneManager.LoadScene(2);
+        }
+    }
+}
