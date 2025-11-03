@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerRotation : MonoBehaviour
 {
     private Quaternion target;
-    public float rotationSpeed = 90f;
     public bool isRotating = false;
     
     void Start()
@@ -15,6 +14,7 @@ public class PlayerRotation : MonoBehaviour
     
     void Update()
     {
+        float rotationSpeed = 180f;
         //You can turn, if you aren't already turning
         if (!isRotating)
         {
@@ -38,7 +38,7 @@ public class PlayerRotation : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(
                 transform.rotation, 
                 target, 
-                30f * Time.deltaTime //Degrees per second
+                rotationSpeed * Time.deltaTime //Degrees per second
             );
             
             //Checks if we lookin'
