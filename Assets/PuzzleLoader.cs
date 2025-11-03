@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PuzzleLoader : MonoBehaviour
 {
-    public string sceneToLoad = "Scenes/ButtonPuzzle";
+    public string sceneToLoad = "ButtonPuzzle";
     void Start()
     {
         
@@ -21,7 +21,7 @@ public class PuzzleLoader : MonoBehaviour
     {
         if(other.CompareTag("ButtonPuzzle"))
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(sceneToLoad);
         }
     }
 }
