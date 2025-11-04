@@ -13,11 +13,13 @@ public class NodeMovement : MonoBehaviour
     
     //Movement settings
     [SerializeField] private bool instantMove = false; //If true, player moves to each node instantly, like a teleport(may speed up debug?(or option?))
-    [SerializeField] private float moveSpeed = 10f; //How fest player is(if above option is false)
-    
+    [SerializeField] private float moveSpeed = 100f; //How fest player is(if above option is false)
+    public LayerMask Wall;
     //[SerializeField] makes a private variable still editable in the inspector, FYI(Goose didn't know that when adding it LMAO)
     private bool isMoving = false;
     private Vector3 targetPosition;
+
+    public float raycastDistance = 10f;
 
     void Start()
     {
@@ -35,31 +37,35 @@ public class NodeMovement : MonoBehaviour
     void Update()
     {
         PlayerRotation rotationScript = GetComponent<PlayerRotation>(); //Checks if the player is rotating
+        Vector3 rayOrigin = transform.position; //Where the player is
+        Vector3 rayDirection = transform.forward; //Forward, relative to player
 
         if (Input.GetKeyDown(moveKey) && !isMoving && !rotationScript.isRotating)
         {
             Transform closestNode = FindClosestNodeInFront();
-            
+             
             if (closestNode != null)
             {
                 //debug stuff, in case someone breaks something(probably me, Goose.)
                 Debug.Log("Found node: " + closestNode.name + " at position: " + closestNode.position);
-                
-                if (instantMove)
+                if (isClear(transform.position, closestNode.position))
                 {
-                    transform.position = closestNode.position;
-                    Debug.Log("Moved to: " + transform.position);
+                    if (instantMove)
+                    {
+                        transform.position = closestNode.position;
+                        Debug.Log("Moved to: " + transform.position);
+                    }
+                    else
+                    {
+                        targetPosition = closestNode.position;
+                        isMoving = true;
+                    }
                 }
-                else
-                {
-                    targetPosition = closestNode.position;
-                    isMoving = true;
-                }
-                }
-                else
-                {
+            }
+            else
+            {
                 Debug.Log("No node found in front!");
-                }
+            }
         }
 
         if (isMoving) //for shmooth shmovement
@@ -72,6 +78,21 @@ public class NodeMovement : MonoBehaviour
                 isMoving = false;
             }
         }
+    }
+
+    bool isClear(Vector3 start, Vector3 end)
+    {
+        Vector3 direction = end - start; //Find the direction
+        
+        float distance = direction.magnitude; //How far is the player?
+
+        Debug.DrawRay(start, direction.normalized * distance, Color.cyan, 1f); //Debug, you can see where the player would go, whether they can or not
+        
+        if (Physics.Raycast(start, direction.normalized, distance, Wall)) //Cast a ray, and with this if statement it checks if it hits a wall
+        {
+            return false;
+        }//Either wall or clear!
+        return true;
     }
 
     Transform FindClosestNodeInFront()
@@ -124,7 +145,7 @@ public class NodeMovement : MonoBehaviour
             // Draw line from player to nodes in front
             if (dotProduct > 0)
             {
-                Gizmos.DrawLine(playerPos, node.position);
+                //Gizmos.DrawLine(playerPos, node.position);
             }
         }
         

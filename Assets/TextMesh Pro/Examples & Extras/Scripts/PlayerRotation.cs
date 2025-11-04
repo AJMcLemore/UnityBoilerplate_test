@@ -14,6 +14,8 @@ public class PlayerRotation : MonoBehaviour
     
     void Update()
     {
+        
+
         float rotationSpeed = 180f;
         //You can turn, if you aren't already turning
         if (!isRotating)
