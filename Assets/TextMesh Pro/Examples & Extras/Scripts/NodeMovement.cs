@@ -8,12 +8,9 @@ public class NodeMovement : MonoBehaviour
     [SerializeField] private Transform[] nodePoints; //In case we want to assign nodes manually?(why is this here)
     [SerializeField] private string nodeTag = "NodePoint"; //Tag used to find nodes automatically
     
-    //Player movement
-    [SerializeField] private KeyCode moveKey = KeyCode.Space; // h o w  m o v e
-    
     //Movement settings
     [SerializeField] private bool instantMove = false; //If true, player moves to each node instantly, like a teleport(may speed up debug?(or option?))
-    [SerializeField] private float moveSpeed = 100f; //How fest player is(if above option is false)
+    [SerializeField] public float moveSpeed = 100f; //How fest player is(if above option is false)
     public LayerMask Wall;
     //[SerializeField] makes a private variable still editable in the inspector, FYI(Goose didn't know that when adding it LMAO)
     private bool isMoving = false;
@@ -21,6 +18,15 @@ public class NodeMovement : MonoBehaviour
 
     public float raycastDistance = 10f;
 
+    public void RealMovement(bool real){//This is for the menu option
+        if(real){
+            moveSpeed = 50f;
+        }
+        else{
+            moveSpeed = 100f;
+        }
+    
+    }
     void Start()
     {
         if (nodePoints == null || nodePoints.Length == 0)//If we don't manually add nodes(again, why would we??)
@@ -40,7 +46,7 @@ public class NodeMovement : MonoBehaviour
         Vector3 rayOrigin = transform.position; //Where the player is
         Vector3 rayDirection = transform.forward; //Forward, relative to player
 
-        if (Input.GetKeyDown(moveKey) && !isMoving && !rotationScript.isRotating)
+        if (Input.GetKeyDown(InputManagement.instance.GetKey("Move")) && !isMoving && !rotationScript.isRotating)
         {
             Transform closestNode = FindClosestNodeInFront();
              
