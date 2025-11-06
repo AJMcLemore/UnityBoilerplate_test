@@ -6,6 +6,10 @@ TagManager:
   tags:
   - NodePoint
   - ButtonPuzzle
+  - ExitTrigger
+  - FreebieTrigger
+  - PixturePuzzle
+  - NumberPuzzle
   layers:
   - Default
   - TransparentFX

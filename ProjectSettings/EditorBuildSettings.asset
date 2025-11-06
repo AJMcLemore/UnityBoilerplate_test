@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ButtonPuzzle.unity
     guid: 4275e48688442634b9b94e11ab0b3a27
+  - enabled: 1
+    path: Assets/Scenes/Exit.unity
+    guid: 0e9ea95b3837c404c8c333710314b231
+  - enabled: 1
+    path: Assets/Scenes/FreebieRoom.unity
+    guid: e2db183a72cbbfc4981d6f2a5962757e
+  - enabled: 1
+    path: Assets/Scenes/NumberPuzzle.unity
+    guid: 3e03863ece7b51a468c46e79573a1059
+  - enabled: 1
+    path: Assets/Scenes/PicturePuzzle.unity
+    guid: f5ae1b19cb110074e89d69aa38e47965
   m_configObjects: {}
