@@ -314,11 +314,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15202584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< Updated upstream
-  m_LocalPosition: {x: -0.96, y: 4.23, z: -15.06}
-=======
   m_LocalPosition: {x: -0.96, y: 4.23, z: -15.062}
->>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -331,7 +327,6 @@ Transform:
 =======
   - {fileID: 1804837574}
   - {fileID: 2128584875}
->>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -367,11 +362,7 @@ MonoBehaviour:
   moveSpeed: 10
   Wall:
     serializedVersion: 2
-<<<<<<< Updated upstream
-    m_Bits: 8
-=======
     m_Bits: 0
->>>>>>> Stashed changes
   raycastDistance: 10
 --- !u!114 &15202591
 MonoBehaviour:
@@ -29074,7 +29065,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isRotating: 0
   rotationSpeed: 180
->>>>>>> Stashed changes
 --- !u!1 &1896916376
 GameObject:
   m_ObjectHideFlags: 0
