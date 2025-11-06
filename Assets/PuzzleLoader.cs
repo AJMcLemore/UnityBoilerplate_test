@@ -21,23 +21,23 @@ public class PuzzleLoader : MonoBehaviour
     {
         if(other.CompareTag("ButtonPuzzle"))
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
         }
         else if(other.CompareTag("ExitTrigger"))
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(2);
         }
         else if(other.CompareTag("FreebieTrigger"))
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(3);
         }
         else if(other.CompareTag("PicturePuzzle"))
         {
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(4);
         }
         else if(other.CompareTag("NumberPuzzle"))
         {
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene(5);
         }
         else
         {
