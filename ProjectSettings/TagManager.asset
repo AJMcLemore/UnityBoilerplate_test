@@ -10,6 +10,7 @@ TagManager:
   - FreebieTrigger
   - PixturePuzzle
   - NumberPuzzle
+  - PicturePuzzle
   layers:
   - Default
   - TransparentFX

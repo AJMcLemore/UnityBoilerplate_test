@@ -33,11 +33,11 @@ public class PuzzleLoader : MonoBehaviour
         }
         else if(other.CompareTag("PicturePuzzle"))
         {
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(5);
         }
         else if(other.CompareTag("NumberPuzzle"))
         {
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(4);
         }
         else
         {
