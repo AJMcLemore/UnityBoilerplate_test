@@ -24,6 +24,9 @@ jobs:
           - WebGL # WebGL.
     steps:
       # Checkout
+      - name: Clean workspace
+        uses: clean-workspace-github-action@v1.0.2 # Or another suitable cleanup action
+
       - name: Checkout repository 🛒
         uses: actions/checkout@v4
         with:
