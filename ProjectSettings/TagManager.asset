@@ -11,6 +11,7 @@ TagManager:
   - PixturePuzzle
   - NumberPuzzle
   - PicturePuzzle
+  - PuzzleTest
   layers:
   - Default
   - TransparentFX

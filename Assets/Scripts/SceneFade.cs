@@ -28,6 +28,7 @@ public class SceneFade : MonoBehaviour
         Color targetColor = new Color(_sceneFadeImage.color.r, _sceneFadeImage.color.g, _sceneFadeImage.color.b, 1);
 
         gameObject.SetActive(true);
+        
         yield return FadeCoroutine(startColor, targetColor, duration);
     }
 
