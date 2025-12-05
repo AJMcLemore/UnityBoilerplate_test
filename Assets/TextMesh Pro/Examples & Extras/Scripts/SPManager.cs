@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SPManager : MonoBehaviour { //Thanks Firnox on YT!(From 3 years ago)
   [SerializeField] private Transform gameTransform;
@@ -10,6 +11,7 @@ public class SPManager : MonoBehaviour { //Thanks Firnox on YT!(From 3 years ago
   private int emptyLocation;
   private int size;
   private bool shuffling = false;
+  private int solved = 0;
 
   // Create the game setup with size x size pieces.
   private void CreateGamePieces(float gapThickness) {
@@ -49,22 +51,27 @@ public class SPManager : MonoBehaviour { //Thanks Firnox on YT!(From 3 years ago
   // Start is called before the first frame update
   void Start() {
     pieces = new List<Transform>();
-    size = 4;
+    size = 3;
     CreateGamePieces(0.01f);
+    Shuffle();
   }
 
   // Update is called once per frame
   void Update() {
     // Check for completion.
     if (!shuffling && CheckCompletion()) {
-      shuffling = true;
-      StartCoroutine(WaitShuffle(0.5f));
+      solved++;
+      SceneManager.LoadScene("Menu");
+      Debug.Log("YOU DID IT!!!!");
     }
-
     // On click send out ray to see if we click a piece.
     if (Input.GetMouseButtonDown(0)) {
-      RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-      if (hit) {
+      Debug.Log("Mouse clicked");
+      Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+      RaycastHit hit;
+      int puzzleLayer = LayerMask.GetMask("PuzzlePieces");
+      Debug.DrawRay(ray.origin, ray.direction * 100, Color.red, 2f);
+      if (Physics.Raycast(ray, out hit, Mathf.Infinity, puzzleLayer)) {
         // Go through the list, the index tells us the position.
         for (int i = 0; i < pieces.Count; i++) {
           if (pieces[i] == hit.transform) {
