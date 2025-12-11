@@ -12,6 +12,7 @@ public class SPManager : MonoBehaviour { //Thanks Firnox on YT!(From 3 years ago
   private int size;
   private bool shuffling = false;
   private int solved = 0;
+  private int sizer = 3;
 
   // Create the game setup with size x size pieces.
   private void CreateGamePieces(float gapThickness) {
@@ -51,7 +52,7 @@ public class SPManager : MonoBehaviour { //Thanks Firnox on YT!(From 3 years ago
   // Start is called before the first frame update
   void Start() {
     pieces = new List<Transform>();
-    size = 3;
+    size = sizer;
     CreateGamePieces(0.01f);
     Shuffle();
   }
@@ -61,6 +62,7 @@ public class SPManager : MonoBehaviour { //Thanks Firnox on YT!(From 3 years ago
     // Check for completion.
     if (!shuffling && CheckCompletion()) {
       solved++;
+      sizer++;
       SceneManager.LoadScene("Menu");
       Debug.Log("YOU DID IT!!!!");
     }
